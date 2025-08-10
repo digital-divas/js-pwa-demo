@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="./manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+    </script>
+    <script src='./script.js'></script>
+    <link href='./styles.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class='page'>
+    <div class='main-container' id="list-container">
+        <button class="actionButton create" onclick="showCreateForm()">Criar Novo</button>
+
+        <div id="list-section"></div>
+    </div>
+
+    <div class='main-container form-container' id="form-section" style="display:none;">
+        <input id="item-input" type="text" placeholder="Nome do item" class="form-input">
+        <div class="form-actions">
+            <button class="actionButton create" onclick="saveItem()">Salvar</button>
+            <button class="actionButton delete" onclick="hideForm()">Cancelar</button>
+        </div>
+    </div>
+</body>
+
+</html>
