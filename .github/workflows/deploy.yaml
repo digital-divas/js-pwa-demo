@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Prepare publish directory
-        run: |
-          mkdir -p public/.well-known
-          cp -r * public/ 
-          cp -r well-known/* public/.well-known/
+        run: | 
+            mkdir -p public/.well-known
+            cp -r src/* public/
+            cp -r well-known/* public/.well-known/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
